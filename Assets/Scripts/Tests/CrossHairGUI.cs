@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CrossHairGUI : MonoBehaviour {
 
+    public float movespeed;
+
     public Texture2D CrossHair;
 
     //void OnGUI()
@@ -20,14 +22,19 @@ public class CrossHairGUI : MonoBehaviour {
     public Rect position;
     static bool OriginalOn = true;
 
-    void start() {
+    void start()
+    {
         position = new Rect((Screen.width - CrossHair.width) / 2, (Screen.height - CrossHair.height) / 2, CrossHair.width, CrossHair.height);
+
+
+
     }
 
-    void OnGUI() {
+    void OnGUI()
+    {
         Screen.lockCursor = true;
         //Screen.showCursor = false;
-        if(OriginalOn == true)
+        if (OriginalOn == true)
         {
             GUI.DrawTexture(position, CrossHair);
         }
